@@ -1,0 +1,168 @@
+{
+  "persons": {
+    "es": ["yo", "tú", "él/ella/usted", "nosotros", "vosotros", "ellos/ellas/ustedes"],
+    "fr": ["je", "tu", "il/elle/on", "nous", "vous", "ils/elles"]
+  },
+  "verbs": [
+    {
+      "id": "hablar-parler",
+      "english": "to speak",
+      "es": { "infinitive": "hablar", "group": "-ar", "regular": true,
+        "present": ["hablo", "hablas", "habla", "hablamos", "habláis", "hablan"] },
+      "fr": { "infinitive": "parler", "group": "-er", "regular": true,
+        "present": ["parle", "parles", "parle", "parlons", "parlez", "parlent"] }
+    },
+    {
+      "id": "comer-manger",
+      "english": "to eat",
+      "es": { "infinitive": "comer", "group": "-er", "regular": true,
+        "present": ["como", "comes", "come", "comemos", "coméis", "comen"] },
+      "fr": { "infinitive": "manger", "group": "-er", "regular": true,
+        "present": ["mange", "manges", "mange", "mangeons", "mangez", "mangent"] }
+    },
+    {
+      "id": "vivir-vivre",
+      "english": "to live",
+      "es": { "infinitive": "vivir", "group": "-ir", "regular": true,
+        "present": ["vivo", "vives", "vive", "vivimos", "vivís", "viven"] },
+      "fr": { "infinitive": "vivre", "group": "-re", "regular": false,
+        "present": ["vis", "vis", "vit", "vivons", "vivez", "vivent"] }
+    },
+    {
+      "id": "trabajar-travailler",
+      "english": "to work",
+      "es": { "infinitive": "trabajar", "group": "-ar", "regular": true,
+        "present": ["trabajo", "trabajas", "trabaja", "trabajamos", "trabajáis", "trabajan"] },
+      "fr": { "infinitive": "travailler", "group": "-er", "regular": true,
+        "present": ["travaille", "travailles", "travaille", "travaillons", "travaillez", "travaillent"] }
+    },
+    {
+      "id": "estudiar-etudier",
+      "english": "to study",
+      "es": { "infinitive": "estudiar", "group": "-ar", "regular": true,
+        "present": ["estudio", "estudias", "estudia", "estudiamos", "estudiáis", "estudian"] },
+      "fr": { "infinitive": "étudier", "group": "-er", "regular": true,
+        "present": ["étudie", "étudies", "étudie", "étudions", "étudiez", "étudient"] }
+    },
+    {
+      "id": "abrir-ouvrir",
+      "english": "to open",
+      "es": { "infinitive": "abrir", "group": "-ir", "regular": true,
+        "present": ["abro", "abres", "abre", "abrimos", "abrís", "abren"] },
+      "fr": { "infinitive": "ouvrir", "group": "-ir", "regular": false,
+        "present": ["ouvre", "ouvres", "ouvre", "ouvrons", "ouvrez", "ouvrent"] }
+    },
+    {
+      "id": "vender-vendre",
+      "english": "to sell",
+      "es": { "infinitive": "vender", "group": "-er", "regular": true,
+        "present": ["vendo", "vendes", "vende", "vendemos", "vendéis", "venden"] },
+      "fr": { "infinitive": "vendre", "group": "-re", "regular": true,
+        "present": ["vends", "vends", "vend", "vendons", "vendez", "vendent"] }
+    },
+    {
+      "id": "ser-etre",
+      "english": "to be",
+      "es": { "infinitive": "ser", "group": "irregular", "regular": false,
+        "present": ["soy", "eres", "es", "somos", "sois", "son"] },
+      "fr": { "infinitive": "être", "group": "irregular", "regular": false,
+        "present": ["suis", "es", "est", "sommes", "êtes", "sont"] }
+    },
+    {
+      "id": "tener-avoir",
+      "english": "to have",
+      "es": { "infinitive": "tener", "group": "irregular", "regular": false,
+        "present": ["tengo", "tienes", "tiene", "tenemos", "tenéis", "tienen"] },
+      "fr": { "infinitive": "avoir", "group": "irregular", "regular": false,
+        "present": ["ai", "as", "a", "avons", "avez", "ont"] }
+    },
+    {
+      "id": "hacer-faire",
+      "english": "to do / to make",
+      "es": { "infinitive": "hacer", "group": "irregular", "regular": false,
+        "present": ["hago", "haces", "hace", "hacemos", "hacéis", "hacen"] },
+      "fr": { "infinitive": "faire", "group": "irregular", "regular": false,
+        "present": ["fais", "fais", "fait", "faisons", "faites", "font"] }
+    },
+    {
+      "id": "ir-aller",
+      "english": "to go",
+      "es": { "infinitive": "ir", "group": "irregular", "regular": false,
+        "present": ["voy", "vas", "va", "vamos", "vais", "van"] },
+      "fr": { "infinitive": "aller", "group": "irregular", "regular": false,
+        "present": ["vais", "vas", "va", "allons", "allez", "vont"] }
+    },
+    {
+      "id": "querer-vouloir",
+      "english": "to want",
+      "es": { "infinitive": "querer", "group": "irregular", "regular": false,
+        "present": ["quiero", "quieres", "quiere", "queremos", "queréis", "quieren"] },
+      "fr": { "infinitive": "vouloir", "group": "irregular", "regular": false,
+        "present": ["veux", "veux", "veut", "voulons", "voulez", "veulent"] }
+    },
+    {
+      "id": "poder-pouvoir",
+      "english": "to be able to / can",
+      "es": { "infinitive": "poder", "group": "irregular", "regular": false,
+        "present": ["puedo", "puedes", "puede", "podemos", "podéis", "pueden"] },
+      "fr": { "infinitive": "pouvoir", "group": "irregular", "regular": false,
+        "present": ["peux", "peux", "peut", "pouvons", "pouvez", "peuvent"] }
+    },
+    {
+      "id": "decir-dire",
+      "english": "to say / to tell",
+      "es": { "infinitive": "decir", "group": "irregular", "regular": false,
+        "present": ["digo", "dices", "dice", "decimos", "decís", "dicen"] },
+      "fr": { "infinitive": "dire", "group": "irregular", "regular": false,
+        "present": ["dis", "dis", "dit", "disons", "dites", "disent"] }
+    },
+    {
+      "id": "ver-voir",
+      "english": "to see",
+      "es": { "infinitive": "ver", "group": "irregular", "regular": false,
+        "present": ["veo", "ves", "ve", "vemos", "veis", "ven"] },
+      "fr": { "infinitive": "voir", "group": "irregular", "regular": false,
+        "present": ["vois", "vois", "voit", "voyons", "voyez", "voient"] }
+    },
+    {
+      "id": "dar-donner",
+      "english": "to give",
+      "es": { "infinitive": "dar", "group": "irregular", "regular": false,
+        "present": ["doy", "das", "da", "damos", "dais", "dan"] },
+      "fr": { "infinitive": "donner", "group": "-er", "regular": true,
+        "present": ["donne", "donnes", "donne", "donnons", "donnez", "donnent"] }
+    },
+    {
+      "id": "saber-savoir",
+      "english": "to know",
+      "es": { "infinitive": "saber", "group": "irregular", "regular": false,
+        "present": ["sé", "sabes", "sabe", "sabemos", "sabéis", "saben"] },
+      "fr": { "infinitive": "savoir", "group": "irregular", "regular": false,
+        "present": ["sais", "sais", "sait", "savons", "savez", "savent"] }
+    },
+    {
+      "id": "venir-venir",
+      "english": "to come",
+      "es": { "infinitive": "venir", "group": "irregular", "regular": false,
+        "present": ["vengo", "vienes", "viene", "venimos", "venís", "vienen"] },
+      "fr": { "infinitive": "venir", "group": "irregular", "regular": false,
+        "present": ["viens", "viens", "vient", "venons", "venez", "viennent"] }
+    },
+    {
+      "id": "poner-mettre",
+      "english": "to put",
+      "es": { "infinitive": "poner", "group": "irregular", "regular": false,
+        "present": ["pongo", "pones", "pone", "ponemos", "ponéis", "ponen"] },
+      "fr": { "infinitive": "mettre", "group": "irregular", "regular": false,
+        "present": ["mets", "mets", "met", "mettons", "mettez", "mettent"] }
+    },
+    {
+      "id": "salir-sortir",
+      "english": "to leave / to go out",
+      "es": { "infinitive": "salir", "group": "irregular", "regular": false,
+        "present": ["salgo", "sales", "sale", "salimos", "salís", "salen"] },
+      "fr": { "infinitive": "sortir", "group": "irregular", "regular": false,
+        "present": ["sors", "sors", "sort", "sortons", "sortez", "sortent"] }
+    }
+  ]
+}
