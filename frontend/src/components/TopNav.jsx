@@ -4,14 +4,14 @@ const NAV_ITEMS = [
   { key: 'compare', label: 'Compare', icon: '📊' },
 ]
 
-export default function Sidebar({ view, onNavigate, languagesReady }) {
+export default function TopNav({ view, onNavigate, languagesReady }) {
   return (
-    <aside className="sidebar">
-      <div className="sidebar-brand">
-        <span className="sidebar-logo">📚</span>
-        <span className="sidebar-name">Verbario</span>
+    <header className="top-nav">
+      <div className="top-nav-brand">
+        <span className="top-nav-logo">📚</span>
+        <span className="top-nav-name">Verbario</span>
       </div>
-      <nav className="sidebar-nav">
+      <nav className="top-nav-links">
         {NAV_ITEMS.map((item) => {
           const disabled = item.key !== 'home' && !languagesReady
           return (
@@ -30,6 +30,6 @@ export default function Sidebar({ view, onNavigate, languagesReady }) {
           )
         })}
       </nav>
-    </aside>
+    </header>
   )
 }

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import Sidebar from './components/Sidebar'
+import TopNav from './components/TopNav'
 import Header from './components/Header'
 import HomeView from './components/HomeView'
 import DrillView from './components/DrillView'
@@ -50,24 +50,22 @@ export default function App() {
 
   return (
     <div className="app-shell">
-      <Sidebar view={view} onNavigate={handleNavigate} languagesReady={languagesReady} />
-      <div className="app-main">
-        <Header view={view} known={known} target={target} onNavigate={handleNavigate} />
-        <main className="content-grid">
-          {view === 'home' && (
-            <HomeView
-              known={known}
-              target={target}
-              onKnownChange={setKnown}
-              onTargetChange={setTarget}
-              onTreeSelect={handleTreeSelect}
-              onNavigate={handleNavigate}
-            />
-          )}
-          {view === 'drill' && languagesReady && <DrillView known={known} target={target} />}
-          {view === 'compare' && languagesReady && <CompareView known={known} target={target} />}
-        </main>
-      </div>
+      <TopNav view={view} onNavigate={handleNavigate} languagesReady={languagesReady} />
+      <Header view={view} known={known} target={target} onNavigate={handleNavigate} />
+      <main className="content-grid">
+        {view === 'home' && (
+          <HomeView
+            known={known}
+            target={target}
+            onKnownChange={setKnown}
+            onTargetChange={setTarget}
+            onTreeSelect={handleTreeSelect}
+            onNavigate={handleNavigate}
+          />
+        )}
+        {view === 'drill' && languagesReady && <DrillView known={known} target={target} />}
+        {view === 'compare' && languagesReady && <CompareView known={known} target={target} />}
+      </main>
     </div>
   )
 }
