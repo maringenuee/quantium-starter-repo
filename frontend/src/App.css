@@ -313,35 +313,60 @@
   margin-top: 8px;
 }
 
+.tree-bg {
+  fill: url(#tree-parchment);
+}
+
+.tree-root {
+  fill: none;
+  stroke: #2b2117;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  opacity: 0.55;
+}
+
 .tree-branch {
-  stroke: var(--border);
+  fill: none;
+  stroke: #2b2117;
+  stroke-width: 7;
+  stroke-linecap: round;
+  opacity: 0.92;
+}
+
+.tree-trunk {
+  fill: #2b2117;
+}
+
+.foliage circle {
+  opacity: 0.45;
+}
+
+.node-core {
+  stroke: rgba(0, 0, 0, 0.15);
   stroke-width: 1.5;
 }
 
-.tree-node circle {
-  stroke: rgba(0, 0, 0, 0.08);
-  stroke-width: 1.5;
-}
-
-.tree-node text {
+.node-glyph {
   fill: #fff;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .tree-node-label {
-  fill: var(--text-h) !important;
-  font-size: 12px !important;
-  font-weight: 500;
+  fill: #2b2117 !important;
+  font-size: 13px !important;
+  font-weight: 600;
 }
 
 .tree-node-root circle {
-  fill: var(--social-bg);
+  fill: #f1e6c8;
+  stroke: #2b2117;
+  stroke-width: 2;
 }
 
 .tree-node-root text {
-  fill: var(--text);
-  font-size: 13px;
-  font-weight: 600;
+  fill: #2b2117;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .tree-node.available {
@@ -349,39 +374,32 @@
   outline: none;
 }
 
-.tree-node.available:focus-visible circle {
-  stroke: var(--text-h);
-  stroke-width: 2.5;
+.tree-node.available:focus-visible .node-core {
+  stroke: #2b2117;
+  stroke-width: 3;
 }
 
 .tree-node.unavailable {
   filter: grayscale(1);
-}
-
-.tree-node.unavailable circle {
-  opacity: 0.35;
-}
-
-.tree-node.unavailable text {
-  opacity: 0.6;
+  opacity: 0.55;
 }
 
 .node-glow {
-  opacity: 0.35;
-  filter: blur(2px);
+  opacity: 0.4;
+  filter: blur(3px);
 }
 
 .node-ring {
   fill: none;
-  stroke: var(--text-h);
-  stroke-width: 2.5;
+  stroke: #2b2117;
+  stroke-width: 3;
   stroke-dasharray: 4 3;
 }
 
 .tree-node-tag {
   font-size: 10px;
   fill: var(--accent) !important;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 /* Compare view */
