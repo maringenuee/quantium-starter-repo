@@ -125,6 +125,69 @@
   padding: 32px;
 }
 
+/* Hero */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #423776, var(--accent));
+  border-radius: 24px;
+  padding: 48px 40px;
+  margin-bottom: 28px;
+  max-width: 900px;
+}
+
+.hero-title {
+  position: relative;
+  color: #fff;
+  font-size: 48px;
+  letter-spacing: -1px;
+  margin: 0 0 12px;
+}
+
+.hero-subtitle {
+  position: relative;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 17px;
+  max-width: 480px;
+  line-height: 1.5;
+}
+
+.hero-decor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero-dot {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.dot-1 {
+  width: 140px;
+  height: 140px;
+  right: -30px;
+  top: -40px;
+  background: rgba(243, 201, 79, 0.25);
+}
+
+.dot-2 {
+  width: 80px;
+  height: 80px;
+  right: 90px;
+  bottom: -30px;
+  background: rgba(232, 96, 79, 0.3);
+}
+
+.dot-3 {
+  width: 40px;
+  height: 40px;
+  right: 220px;
+  top: 30px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
 .english {
   color: var(--text);
   font-style: italic;
@@ -157,6 +220,21 @@
 
 .home-grid .span-2 {
   grid-column: 1 / -1;
+}
+
+.panel-card {
+  background: var(--code-bg);
+}
+
+.card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  font-size: 20px;
+  margin-bottom: 12px;
 }
 
 .nav-card {
@@ -194,7 +272,7 @@
   margin-bottom: 16px;
 }
 
-.language-pickers label {
+.lang-select {
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -203,13 +281,32 @@
   min-width: 200px;
 }
 
-.language-pickers select {
-  font: inherit;
-  padding: 8px;
-  border-radius: 8px;
+.lang-select-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  border-radius: 10px;
   border: 1px solid var(--border);
   background: var(--bg);
+}
+
+.lang-select-flag {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.lang-select-control select {
+  flex: 1;
+  font: inherit;
+  padding: 8px 4px;
+  border: none;
+  background: transparent;
   color: var(--text-h);
+}
+
+.lang-select-control select:focus {
+  outline: none;
 }
 
 .hint {
@@ -235,14 +332,19 @@
 }
 
 .tree-node circle {
-  fill: var(--code-bg);
-  stroke: var(--border);
+  stroke: rgba(0, 0, 0, 0.08);
   stroke-width: 1.5;
 }
 
 .tree-node text {
-  fill: var(--text-h);
-  font-size: 12px;
+  fill: #fff;
+  font-size: 16px;
+}
+
+.tree-node-label {
+  fill: var(--text-h) !important;
+  font-size: 12px !important;
+  font-weight: 500;
 }
 
 .tree-node-root circle {
@@ -261,8 +363,12 @@
 }
 
 .tree-node.available:focus-visible circle {
-  stroke: var(--accent);
+  stroke: var(--text-h);
   stroke-width: 2.5;
+}
+
+.tree-node.unavailable {
+  filter: grayscale(1);
 }
 
 .tree-node.unavailable circle {
@@ -270,23 +376,19 @@
 }
 
 .tree-node.unavailable text {
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
-.tree-node.selected-known circle {
-  fill: var(--accent-bg);
-  stroke: var(--accent);
-  stroke-width: 2;
+.node-glow {
+  opacity: 0.35;
+  filter: blur(2px);
 }
 
-.tree-node.selected-target circle {
-  fill: var(--accent);
-  stroke: var(--accent);
-  stroke-width: 2;
-}
-
-.tree-node.selected-target text {
-  fill: #fff;
+.node-ring {
+  fill: none;
+  stroke: var(--text-h);
+  stroke-width: 2.5;
+  stroke-dasharray: 4 3;
 }
 
 .tree-node-tag {
