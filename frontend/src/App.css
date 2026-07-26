@@ -112,67 +112,132 @@
   padding: 32px;
 }
 
-/* Hero */
+/* Hero — Corporate Memphis style: flat fills, no gradients/shadows */
 
 .hero {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg, #423776, var(--accent));
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: #fdf1e6;
   border-radius: 24px;
-  padding: 48px 40px;
+  padding: 40px;
   margin-bottom: 28px;
-  max-width: 900px;
+  max-width: 960px;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 0;
 }
 
 .hero-title {
-  position: relative;
-  color: #fff;
+  color: #241c30;
   font-size: 48px;
   letter-spacing: -1px;
   margin: 0 0 12px;
 }
 
 .hero-subtitle {
-  position: relative;
-  color: rgba(255, 255, 255, 0.88);
+  color: #4a4058;
   font-size: 17px;
-  max-width: 480px;
+  max-width: 420px;
   line-height: 1.5;
 }
 
-.hero-decor {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
+.hero-illustration {
+  width: 260px;
+  height: auto;
+  flex-shrink: 0;
 }
 
-.hero-dot {
-  position: absolute;
-  border-radius: 50%;
+.memphis-bg-blob {
+  fill: #ffdccb;
 }
 
-.dot-1 {
-  width: 140px;
-  height: 140px;
-  right: -30px;
-  top: -40px;
-  background: rgba(243, 201, 79, 0.25);
+.memphis-shadow {
+  fill: #f0c9a8;
 }
 
-.dot-2 {
-  width: 80px;
-  height: 80px;
-  right: 90px;
-  bottom: -30px;
-  background: rgba(232, 96, 79, 0.3);
+.memphis-leaf {
+  fill: #3fa96b;
 }
 
-.dot-3 {
-  width: 40px;
-  height: 40px;
-  right: 220px;
-  top: 30px;
-  background: rgba(255, 255, 255, 0.18);
+.memphis-dot {
+  opacity: 1;
+}
+
+.dot-yellow {
+  fill: #ffc845;
+}
+
+.dot-coral {
+  fill: #ff7f66;
+}
+
+.dot-teal {
+  fill: #2ec4b6;
+}
+
+.memphis-pants {
+  fill: #2ec4b6;
+}
+
+.memphis-torso {
+  fill: #ff7f66;
+}
+
+.memphis-limb {
+  fill: none;
+  stroke-width: 26;
+  stroke-linecap: round;
+}
+
+.memphis-hand,
+.memphis-skin {
+  fill: #c9b7ff;
+}
+
+.memphis-hair {
+  fill: #241c30;
+}
+
+.memphis-eye {
+  fill: #241c30;
+}
+
+.memphis-smile {
+  fill: none;
+  stroke: #241c30;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.memphis-pencil-body {
+  fill: #ffc845;
+}
+
+.memphis-pencil-tip {
+  fill: #241c30;
+}
+
+.memphis-pencil-band {
+  fill: #241c30;
+}
+
+.memphis-card {
+  fill: #fffaf0;
+  stroke: #241c30;
+  stroke-width: 2;
+}
+
+.memphis-card-text {
+  fill: #241c30;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.memphis-card-text.accent {
+  fill: #ff7f66;
 }
 
 .english {
@@ -314,7 +379,7 @@
 }
 
 .tree-bg {
-  fill: url(#tree-parchment);
+  fill: #f7ecd8;
 }
 
 .tree-root {
@@ -338,12 +403,14 @@
 }
 
 .foliage circle {
-  opacity: 0.45;
+  opacity: 0.9;
+  stroke: #f7ecd8;
+  stroke-width: 3;
 }
 
 .node-core {
-  stroke: rgba(0, 0, 0, 0.15);
-  stroke-width: 1.5;
+  stroke: #f7ecd8;
+  stroke-width: 3;
 }
 
 .node-glyph {
@@ -385,8 +452,7 @@
 }
 
 .node-glow {
-  opacity: 0.4;
-  filter: blur(3px);
+  opacity: 0.3;
 }
 
 .node-ring {

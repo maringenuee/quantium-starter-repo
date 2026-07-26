@@ -38,16 +38,6 @@ export default function RomanceTree({ known, target, onSelect }) {
       role="img"
       aria-label="Family tree of Romance languages descending from Latin"
     >
-      <defs>
-        <radialGradient id="tree-parchment" cx="50%" cy="30%" r="80%">
-          <stop offset="0%" stopColor="#f8f2e2" />
-          <stop offset="100%" stopColor="#e7dcc0" />
-        </radialGradient>
-        <filter id="tree-blob-blur" x="-60%" y="-60%" width="220%" height="220%">
-          <feGaussianBlur stdDeviation="5" />
-        </filter>
-      </defs>
-
       <rect className="tree-bg" width={WIDTH} height={HEIGHT} rx={24} />
 
       {ROOT_PATHS.map((d, i) => (
@@ -103,7 +93,7 @@ export default function RomanceTree({ known, target, onSelect }) {
           >
             <title>{lang.available ? lang.name : `${lang.name} (coming soon)`}</title>
 
-            <g className="foliage" filter="url(#tree-blob-blur)">
+            <g className="foliage">
               <circle cx={-16} cy={-8} r={26} style={{ fill: lang.color }} />
               <circle cx={16} cy={-12} r={22} style={{ fill: lang.color }} />
               <circle cx={2} cy={14} r={25} style={{ fill: lang.color }} />

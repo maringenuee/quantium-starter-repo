@@ -1,5 +1,6 @@
 import { LANGUAGES, LANGUAGE_NAMES, LANGUAGE_BY_CODE, isPairSupported } from '../languages'
 import RomanceTree from './RomanceTree'
+import HeroIllustration from './HeroIllustration'
 
 function LanguageSelect({ label, value, onChange }) {
   const selected = value ? LANGUAGE_BY_CODE[value] : null
@@ -29,16 +30,14 @@ export default function HomeView({ known, target, onKnownChange, onTargetChange,
   return (
     <div className="home-page">
       <section className="hero">
-        <div className="hero-decor" aria-hidden="true">
-          <span className="hero-dot dot-1" />
-          <span className="hero-dot dot-2" />
-          <span className="hero-dot dot-3" />
+        <div className="hero-text">
+          <h1 className="hero-title">Verbario</h1>
+          <p className="hero-subtitle">
+            Learn a new Romance language through the one you already speak — compare verbs
+            side by side instead of memorizing them twice.
+          </p>
         </div>
-        <h1 className="hero-title">Verbario</h1>
-        <p className="hero-subtitle">
-          Learn a new Romance language through the one you already speak — compare verbs
-          side by side instead of memorizing them twice.
-        </p>
+        <HeroIllustration />
       </section>
 
       <div className="home-grid">
