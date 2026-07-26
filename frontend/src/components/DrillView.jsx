@@ -1,18 +1,17 @@
 import { useEffect, useState } from 'react'
 import { checkDrillAnswer, fetchDrillQuestion } from '../api'
+import { LANGUAGE_NAMES } from '../languages'
 
-export default function DrillView() {
+export default function DrillView({ known, target }) {
   const [question, setQuestion] = useState(null)
-  const [esAnswer, setEsAnswer] = useState('')
-  const [frAnswer, setFrAnswer] = useState('')
+  const [answers, setAnswers] = useState({ es: '', fr: '' })
   const [result, setResult] = useState(null)
   const [score, setScore] = useState({ correct: 0, total: 0 })
   const [error, setError] = useState(null)
 
   function loadQuestion() {
     setResult(null)
-    setEsAnswer('')
-    setFrAnswer('')
+    setAnswers({ es: '', fr: '' })
     fetchDrillQuestion()
       .then(setQuestion)
       .catch((err) => setError(err.message))
@@ -29,8 +28,8 @@ export default function DrillView() {
     checkDrillAnswer({
       verb_id: question.verb_id,
       person_index: question.person_index,
-      es_answer: esAnswer,
-      fr_answer: frAnswer,
+      es_answer: answers.es,
+      fr_answer: answers.fr,
     })
       .then((data) => {
         setResult(data)
@@ -45,8 +44,10 @@ export default function DrillView() {
   if (error) return <p className="error">{error}</p>
   if (!question) return <p>Loading…</p>
 
+  const languages = [known, target]
+
   return (
-    <div className="drill-view">
+    <div className="card drill-view">
       <p className="score">
         Score: {score.correct} / {score.total}
       </p>
@@ -57,40 +58,25 @@ export default function DrillView() {
       <p className="english">{question.english}</p>
 
       <form onSubmit={handleSubmit}>
-        <div className="drill-row">
-          <label>
-            Spanish — {question.es_person}
-            <input
-              type="text"
-              value={esAnswer}
-              onChange={(e) => setEsAnswer(e.target.value)}
-              disabled={!!result}
-              autoFocus
-            />
-          </label>
-          {result && (
-            <span className={result.es.correct ? 'feedback correct' : 'feedback incorrect'}>
-              {result.es.correct ? '✓' : `✗ ${result.es.correct_answer}`}
-            </span>
-          )}
-        </div>
-
-        <div className="drill-row">
-          <label>
-            French — {question.fr_person}
-            <input
-              type="text"
-              value={frAnswer}
-              onChange={(e) => setFrAnswer(e.target.value)}
-              disabled={!!result}
-            />
-          </label>
-          {result && (
-            <span className={result.fr.correct ? 'feedback correct' : 'feedback incorrect'}>
-              {result.fr.correct ? '✓' : `✗ ${result.fr.correct_answer}`}
-            </span>
-          )}
-        </div>
+        {languages.map((lang) => (
+          <div className="drill-row" key={lang}>
+            <label>
+              {LANGUAGE_NAMES[lang]} — {question[`${lang}_person`]}
+              <input
+                type="text"
+                value={answers[lang]}
+                onChange={(e) => setAnswers((a) => ({ ...a, [lang]: e.target.value }))}
+                disabled={!!result}
+                autoFocus={lang === known}
+              />
+            </label>
+            {result && (
+              <span className={result[lang].correct ? 'feedback correct' : 'feedback incorrect'}>
+                {result[lang].correct ? '✓' : `✗ ${result[lang].correct_answer}`}
+              </span>
+            )}
+          </div>
+        ))}
 
         <button type="submit">{result ? 'Next verb' : 'Check answers'}</button>
       </form>

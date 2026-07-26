@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { fetchVerb, fetchVerbs } from '../api'
+import { LANGUAGE_NAMES } from '../languages'
 
-export default function CompareView() {
+export default function CompareView({ known, target }) {
   const [verbs, setVerbs] = useState([])
   const [persons, setPersons] = useState(null)
   const [selectedId, setSelectedId] = useState(null)
@@ -28,21 +29,26 @@ export default function CompareView() {
   if (error) return <p className="error">{error}</p>
   if (!verbs.length || !verb || !persons) return <p>Loading…</p>
 
+  const knownVerb = verb[known]
+  const targetVerb = verb[target]
+  const knownPersons = persons[known]
+  const targetPersons = persons[target]
+
   return (
-    <div className="compare-view">
+    <div className="card compare-view">
       <label className="verb-select">
         Verb
         <select value={selectedId} onChange={(e) => setSelectedId(e.target.value)}>
           {verbs.map((v) => (
             <option key={v.id} value={v.id}>
-              {v.es.infinitive} / {v.fr.infinitive} — {v.english}
+              {v[known].infinitive} / {v[target].infinitive} — {v.english}
             </option>
           ))}
         </select>
       </label>
 
       <h2>
-        {verb.es.infinitive} <span className="divider">/</span> {verb.fr.infinitive}
+        {knownVerb.infinitive} <span className="divider">/</span> {targetVerb.infinitive}
       </h2>
       <p className="english">{verb.english}</p>
 
@@ -50,23 +56,23 @@ export default function CompareView() {
         <thead>
           <tr>
             <th>Person</th>
-            <th className={verb.es.regular ? 'regular' : 'irregular'}>
-              Spanish {verb.es.regular ? '(regular)' : '(irregular)'}
+            <th className={knownVerb.regular ? 'regular' : 'irregular'}>
+              {LANGUAGE_NAMES[known]} {knownVerb.regular ? '(regular)' : '(irregular)'}
             </th>
-            <th className={verb.fr.regular ? 'regular' : 'irregular'}>
-              French {verb.fr.regular ? '(regular)' : '(irregular)'}
+            <th className={targetVerb.regular ? 'regular' : 'irregular'}>
+              {LANGUAGE_NAMES[target]} {targetVerb.regular ? '(regular)' : '(irregular)'}
             </th>
           </tr>
         </thead>
         <tbody>
-          {persons.es.map((esPerson, i) => (
+          {knownPersons.map((knownPerson, i) => (
             <tr key={i}>
               <td className="person-cell">
-                <div>{esPerson}</div>
-                <div className="person-fr">{persons.fr[i]}</div>
+                <div>{knownPerson}</div>
+                <div className="person-fr">{targetPersons[i]}</div>
               </td>
-              <td className={verb.es.regular ? 'regular' : 'irregular'}>{verb.es.present[i]}</td>
-              <td className={verb.fr.regular ? 'regular' : 'irregular'}>{verb.fr.present[i]}</td>
+              <td className={knownVerb.regular ? 'regular' : 'irregular'}>{knownVerb.present[i]}</td>
+              <td className={targetVerb.regular ? 'regular' : 'irregular'}>{targetVerb.present[i]}</td>
             </tr>
           ))}
         </tbody>
