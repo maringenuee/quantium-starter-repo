@@ -12,7 +12,7 @@ export default function Header({ view, known, target, onNavigate }) {
   return (
     <header className="app-header">
       <div>
-        <h1>{title}</h1>
+        <h1 className="font-serif">{title}</h1>
         <p className="tagline">{subtitle}</p>
       </div>
       {known && target && (

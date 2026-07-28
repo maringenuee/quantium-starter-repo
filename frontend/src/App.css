@@ -4,32 +4,53 @@
   flex: 1;
   width: 100%;
   text-align: left;
+  padding-top: 104px;
 }
 
-/* Top nav */
+/* Top nav — floating glass pill */
 
 .top-nav {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  width: 92%;
+  max-width: 760px;
   display: flex;
   align-items: center;
-  gap: 32px;
-  padding: 16px 32px;
-  border-bottom: 1px solid var(--border);
+  justify-content: space-between;
+  gap: 20px;
+  padding: 8px 8px 8px 22px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+@media (prefers-color-scheme: dark) {
+  .top-nav {
+    background: rgba(22, 23, 29, 0.7);
+  }
 }
 
 .top-nav-brand {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   font-weight: 600;
   color: var(--text-h);
 }
 
 .top-nav-logo {
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .top-nav-name {
-  font-size: 18px;
+  font-size: 22px;
+  letter-spacing: 0.2px;
 }
 
 .top-nav-links {
@@ -42,6 +63,7 @@
   align-items: center;
   gap: 8px;
   font: inherit;
+  font-size: 14px;
   padding: 8px 16px;
   border-radius: 999px;
   border: none;
@@ -67,6 +89,12 @@
 
 .nav-icon {
   font-size: 16px;
+}
+
+@media (max-width: 640px) {
+  .top-nav-links button .nav-label {
+    display: none;
+  }
 }
 
 .app-header {
@@ -131,10 +159,14 @@
 }
 
 .hero-title {
+  font-family: var(--serif);
   color: #241c30;
-  font-size: 48px;
+  font-size: 56px;
+  line-height: 0.95;
   letter-spacing: -1px;
   margin: 0 0 12px;
+  opacity: 0;
+  animation: hero-title-in 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .hero-subtitle {
@@ -142,6 +174,30 @@
   font-size: 17px;
   max-width: 420px;
   line-height: 1.5;
+  opacity: 0;
+  animation: hero-subtitle-in 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+}
+
+@keyframes hero-title-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes hero-subtitle-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-illustration {
@@ -276,6 +332,52 @@
 
 .panel-card {
   background: var(--code-bg);
+}
+
+.tree-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.tree-typing-chip {
+  display: flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #2a3616;
+  color: #d7f29a;
+}
+
+.typing-messages {
+  font-family: var(--nokia);
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  min-height: 1.2em;
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 6px;
+  height: 12px;
+  margin-left: 2px;
+  background: #d7f29a;
+  vertical-align: middle;
+  animation: typing-blink 0.8s linear infinite;
+}
+
+@keyframes typing-blink {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 .card-icon {

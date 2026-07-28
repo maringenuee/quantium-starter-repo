@@ -1,6 +1,9 @@
 import { LANGUAGES, LANGUAGE_NAMES, LANGUAGE_BY_CODE, isPairSupported } from '../languages'
 import RomanceTree from './RomanceTree'
 import HeroIllustration from './HeroIllustration'
+import TypingMessages from './TypingMessages'
+
+const TYPING_EXAMPLES = ['hablo → parle', 'tengo → j’ai', 'quiero → je veux', 'puedo → peux', 'vivo → vis']
 
 function LanguageSelect({ label, value, onChange }) {
   const selected = value ? LANGUAGE_BY_CODE[value] : null
@@ -65,7 +68,12 @@ export default function HomeView({ known, target, onKnownChange, onTargetChange,
         </section>
 
         <section className="card panel-card span-2">
-          <h2>The Romance language family</h2>
+          <div className="tree-card-header">
+            <h2>The Romance language family</h2>
+            <span className="tree-typing-chip">
+              <TypingMessages messages={TYPING_EXAMPLES} />
+            </span>
+          </div>
           <RomanceTree known={known} target={target} onSelect={onTreeSelect} />
         </section>
 

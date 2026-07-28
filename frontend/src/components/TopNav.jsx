@@ -9,7 +9,7 @@ export default function TopNav({ view, onNavigate, languagesReady }) {
     <header className="top-nav">
       <div className="top-nav-brand">
         <span className="top-nav-logo">📚</span>
-        <span className="top-nav-name">Verbario</span>
+        <span className="top-nav-name font-serif">Verbario</span>
       </div>
       <nav className="top-nav-links">
         {NAV_ITEMS.map((item) => {
@@ -25,7 +25,7 @@ export default function TopNav({ view, onNavigate, languagesReady }) {
               <span className="nav-icon" aria-hidden="true">
                 {item.icon}
               </span>
-              {item.label}
+              <span className="nav-label">{item.label}</span>
             </button>
           )
         })}
